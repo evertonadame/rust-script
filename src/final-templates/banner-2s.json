@@ -1,0 +1,133 @@
+{
+  "json": {
+    "type": "object",
+    "required": ["ctas"],
+    "properties": {
+      "title": {
+        "title": "Títulos do banner",
+        "type": "object",
+        "required": ["title1"],
+        "properties": {
+          "title1": {
+            "title": "Título principal",
+            "description": "Título principal com maior destaque",
+            "type": "string"
+          },
+          "title2": {
+            "title": "Título secundário",
+            "description": "Título secundário com menor destaque",
+            "type": "string"
+          },
+          "title3": {
+            "title": "Subtítulo",
+            "description": "Subtítulo com menor destaque",
+            "type": "string"
+          },
+          "title1Variant": {
+            "title": "Tag do título principal",
+            "description": "Tag HTML que o título principal será renderizado",
+            "enum": [
+              "address",
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "p",
+              "span",
+              "strong"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "images": {
+        "type": "object",
+        "required": ["xl"],
+        "title": "Imagens do banner",
+        "properties": {
+          "xs": {
+            "type": "object",
+            "title": "Imagem para dispositivos pequenos",
+            "description": "Imagem para dispositivos pequenos",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
+              }
+            }
+          },
+          "xl": {
+            "type": "object",
+            "description": "Imagem para dispositivos grandes",
+            "title": "Imagem para dispositivos grandes",
+            "required": ["src", "alt", "width", "height"],
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
+              }
+            }
+          }
+        }
+      },
+      "ctas": {
+        "type": "array",
+        "title": "Botões do banner",
+        "required": ["txt1", "url"],
+        "items": {
+          "type": "object",
+          "properties": {
+            "txt1": {
+              "title": "Texto do botão",
+              "type": "string"
+            },
+            "url": {
+              "title": "URL do botão",
+              "description": "URL da página para a qual o link vai",
+              "type": "string"
+            },
+            "target": {
+              "title": "Target",
+              "enum": ["_blank", "_parent", "_self", "_top"],
+              "description": "Como a página deve ser aberta. Ex: blank para nova aba, self para mesma aba",
+              "type": "string"
+            },
+            "variant": {
+              "title": "Variante do botão",
+              "description": "Variante do botão com base no button do Design system, ex: primary",
+              "enum": ["primary", "secondary", "ghost", "link"],
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

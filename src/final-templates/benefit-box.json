@@ -1,0 +1,59 @@
+{
+  "json": {
+    "type": "object",
+    "required": ["items"],
+    "properties": {
+      "items": {
+        "type": "array",
+        "title": "Benefícios",
+        "items": {
+          "$ref": "#/definitions/BenefitItem"
+        }
+      }
+    },
+    "definitions": {
+      "BenefitItem": {
+        "required": ["id", "title", "description"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Identificador"
+          },
+          "title": {
+            "type": "string",
+            "title": "Título do benefício"
+          },
+          "description": {
+            "type": "string",
+            "title": "Descrição"
+          },
+          "img": {
+            "type": "object",
+            "title": "Ícone",
+            "required": ["src", "alt", "width", "height"],
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da ícone"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a ícone"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura da ícone em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho da ícone em pixels"
+              }
+            }
+          }
+        }
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

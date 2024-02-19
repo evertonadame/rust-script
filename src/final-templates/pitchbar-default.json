@@ -1,0 +1,44 @@
+{
+  "json": {
+    "type": "object",
+    "required": ["items", "pitchbarType"],
+    "properties": {
+      "pitchbarType": {
+        "type": "number",
+        "title": "Tipo de pitchbar",
+        "enum": [0, 1],
+        "description": "Tipo de pitchbar, 0 para simples e 1 para slider"
+      },
+      "items": {
+        "type": "array",
+        "title": "Items da pitchbar",
+        "items": {
+          "type": "object",
+          "required": ["id", "text", "href"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "title": "Identificador"
+            },
+            "text": {
+              "type": "string",
+              "title": "Texto"
+            },
+            "href": {
+              "type": "string",
+              "title": "Link"
+            },
+            "target": {
+              "title": "Target",
+              "description": "Como a página deve ser aberta. Ex: blank para nova aba, self para mesma aba",
+              "enum": ["_blank", "_parent", "_self", "_top"],
+              "default": "_blank",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

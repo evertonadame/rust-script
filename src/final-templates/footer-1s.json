@@ -1,0 +1,144 @@
+{
+  "json": {
+    "type": "object",
+    "required": ["navigations"],
+    "properties": {
+      "navigations": {
+        "title": "Menus de navegação",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "socialContent": {
+        "$ref": "#/definitions/FooterSocialContent"
+      },
+      "seals": {
+        "type": "array",
+        "title": "Selos de segurança",
+        "items": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "title": "URL do selo"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Texto alternativo para o selo"
+            },
+            "width": {
+              "type": "number",
+              "title": "Largura do selo em pixels"
+            },
+            "height": {
+              "type": "number",
+              "title": "Tamanho do selo em pixels"
+            }
+          }
+        }
+      },
+      "certificates": {
+        "type": "array",
+        "title": "Certificados",
+        "items": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "title": "URL do certificado"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Texto alternativo para o certificado"
+            },
+            "width": {
+              "type": "number",
+              "title": "Largura do certificado em pixels"
+            },
+            "height": {
+              "type": "number",
+              "title": "Tamanho do certificado em pixels"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "FooterSocialContent": {
+        "title": "Redes sociais e descrição",
+        "type": "object",
+        "properties": {
+          "description": {
+            "title": "Descrição",
+            "type": "string"
+          },
+          "logo": {
+            "title": "Logo",
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL do logo"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para o logo"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura do logo em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho do logo em pixels"
+              }
+            }
+          },
+          "socials": {
+            "type": "array",
+            "title": "Redes sociais",
+            "items": {
+              "$ref": "#/definitions/social"
+            }
+          }
+        }
+      },
+      "social": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Nome da rede social"
+          },
+          "href": {
+            "type": "string",
+            "title": "URL da rede social"
+          },
+          "icon": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL do ícone"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para o ícone"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura do ícone em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho do ícone em pixels"
+              }
+            }
+          }
+        }
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

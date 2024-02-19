@@ -1,0 +1,86 @@
+{
+  "json": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "title": "Identificador",
+        "type": ["string", "number"]
+      },
+      "image": {
+        "type": "object",
+        "title": "Imagens do banner",
+        "required": ["xl"],
+        "properties": {
+          "xs": {
+            "type": "object",
+            "title": "Imagem para dispositivos pequenos",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "imgW": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "imgH": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
+              }
+            }
+          },
+          "md": {
+            "type": "object",
+            "title": "Imagem para dispositivos médios",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "imgW": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "imgH": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
+              }
+            }
+          },
+          "xl": {
+            "type": "object",
+            "title": "Imagem para dispositivos grandes",
+            "required": ["src", "alt", "imgW", "imgH"],
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "imgW": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "imgH": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
+              }
+            }
+          }
+        }
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

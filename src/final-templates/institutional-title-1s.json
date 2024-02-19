@@ -1,0 +1,29 @@
+{
+  "json": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Título principal"
+      },
+      "htmlTag": {
+        "title": "Tag do título principal",
+        "description": "Tag HTML que o título principal será renderizado",
+        "enum": [
+          "address",
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "p",
+          "span",
+          "strong"
+        ],
+        "type": "string"
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

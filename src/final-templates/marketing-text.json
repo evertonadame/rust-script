@@ -1,0 +1,38 @@
+{
+  "json": {
+    "type": "object",
+    "required": ["title", "subtitle", "eyebrow"],
+    "properties": {
+      "eyebrow": {
+        "type": "string",
+        "title": "Sobrancelha"
+      },
+      "title": {
+        "type": "string",
+        "title": "Título"
+      },
+      "subtitle": {
+        "title": "Subtítulo",
+        "type": "string"
+      },
+      "titleType": {
+        "title": "Tag do título principal",
+        "description": "Tag HTML que o título principal será renderizado",
+        "enum": [
+          "address",
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "p",
+          "span",
+          "strong"
+        ],
+        "type": "string"
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

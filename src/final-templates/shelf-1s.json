@@ -1,0 +1,54 @@
+{
+  "json": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Título"
+      },
+      "titleVariant": {
+        "title": "Tag do título",
+        "description": "Tag HTML que o título será renderizado",
+        "enum": [
+          "address",
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "p",
+          "span",
+          "strong"
+        ],
+        "type": "string"
+      },
+      "cta": {
+        "type": "object",
+        "title": "Botão abaixo dos resultados",
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Texto",
+            "description": "Ex: Ver mais"
+          },
+          "url": {
+            "type": "string",
+            "title": "Link",
+            "description": "Ex: /busca?term=roupas"
+          }
+        }
+      },
+      "queryParams": {
+        "type": "string",
+        "title": "Parâmetros da busca",
+        "description": "Esses parâmetros serão responsáveis realizar a busca em search"
+      },
+      "carousel": {
+        "type": "boolean",
+        "title": "Exibir em carrossel"
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

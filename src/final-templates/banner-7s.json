@@ -1,0 +1,150 @@
+{
+  "json": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "object",
+        "properties": {
+          "title1": {
+            "type": "string",
+            "title": "Título principal"
+          },
+          "title2": {
+            "type": "string",
+            "title": "Título secundário",
+            "description": "Título secundário do banner com menor destaque"
+          },
+          "title3": {
+            "type": "string",
+            "title": "Subtítulo",
+            "description": "Subtítulo do banner"
+          },
+          "title1Color": {
+            "type": "string",
+            "title": "Cor do título principal"
+          },
+          "title2Color": {
+            "type": "string",
+            "title": "Cor do título secundário"
+          },
+          "title3Color": {
+            "type": "string",
+            "title": "Cor do subtítulo"
+          },
+          "title1Variant": {
+            "title": "Tag do título principal",
+            "description": "Tag HTML que o título principal será renderizado",
+            "enum": [
+              "address",
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "p",
+              "span",
+              "strong"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "images": {
+        "type": "object",
+        "images": {
+          "type": "object",
+          "title": "Imagens do banner",
+          "required": ["xl"],
+          "properties": {
+            "md": {
+              "type": "object",
+              "title": "Imagem para dispositivos médios",
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "title": "URL da imagem"
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Texto alternativo para a imagem"
+                },
+                "width": {
+                  "type": "number",
+                  "title": "Largura da imagem em pixels"
+                },
+                "height": {
+                  "type": "number",
+                  "title": "Tamanho da imagem em pixels"
+                }
+              }
+            },
+            "xl": {
+              "type": "object",
+              "title": "Imagem para dispositivos grandes",
+              "required": ["src", "alt", "width", "height"],
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "title": "URL da imagem"
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Texto alternativo para a imagem"
+                },
+                "width": {
+                  "type": "number",
+                  "title": "Largura da imagem em pixels"
+                },
+                "height": {
+                  "type": "number",
+                  "title": "Tamanho da imagem em pixels"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ctas": {
+        "type": "array",
+        "title": "Botões do banner",
+        "items": {
+          "type": "object",
+          "required": ["txt1", "url"],
+          "properties": {
+            "txt1": {
+              "title": "Texto do botão",
+              "type": "string"
+            },
+            "url": {
+              "title": "URL do botão",
+              "description": "URL da página para a qual o link vai",
+              "type": "string"
+            },
+            "target": {
+              "title": "Target",
+              "enum": ["_blank", "_parent", "_self", "_top"],
+              "description": "Como a página deve ser aberta. Ex: blank para nova aba, self para mesma aba",
+              "type": "string"
+            },
+            "variant": {
+              "title": "Variante do botão",
+              "description": "Variante do botão com base no button do Design system, ex: primary",
+              "enum": ["primary", "secondary", "ghost", "link"],
+              "type": "string"
+            }
+          }
+        }
+      },
+      "extraClassNames": {
+        "type": "array",
+        "title": "Classes extras",
+        "description": "Classes css extras para o banner",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

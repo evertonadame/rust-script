@@ -1,0 +1,38 @@
+{
+  "json": {
+    "type": "object",
+    "properties": {
+      "navigations": {
+        "title": "Menus de navegação",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "logo": {
+        "title": "Logo",
+        "type": "object",
+        "properties": {
+          "src": {
+            "type": "string",
+            "title": "URL do logo"
+          },
+          "alt": {
+            "type": "string",
+            "title": "Texto alternativo para o logo"
+          },
+          "width": {
+            "type": "number",
+            "title": "Largura do logo em pixels"
+          },
+          "height": {
+            "type": "number",
+            "title": "Tamanho do logo em pixels"
+          }
+        }
+      }
+    },
+
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

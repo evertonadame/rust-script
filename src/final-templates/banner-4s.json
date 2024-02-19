@@ -1,0 +1,88 @@
+{
+  "json": {
+    "type": "object",
+    "required": ["ctaTxt1", "ctaLink", "ctaTarget", "ctaTxtColor"],
+    "properties": {
+      "title": {
+        "type": "object",
+        "required": ["title1"],
+        "properties": {
+          "title1": {
+            "type": "string",
+            "title": "Título principal"
+          },
+          "title2": {
+            "type": "string",
+            "title": "Título secundário",
+            "description": "Título secundário do banner com menor destaque"
+          },
+          "title1Variant": {
+            "title": "Tag do título principal",
+            "description": "Tag HTML que o título principal será renderizado",
+            "enum": [
+              "address",
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "p",
+              "span",
+              "strong"
+            ],
+            "type": "string"
+          },
+          "color": {
+            "type": "string",
+            "title": "Cor do título principal"
+          }
+        }
+      },
+      "ctaTxt1": {
+        "type": "string",
+        "title": "Texto do botão"
+      },
+      "ctaLink": {
+        "type": "string",
+        "title": "Link do botão"
+      },
+      "ctaTarget": {
+        "enum": ["_blank", "_parent", "_self", "_top"],
+        "title": "Target",
+        "description": "Como a página deve ser aberta. Ex: blank para nova aba, self para mesma aba",
+        "type": "string"
+      },
+      "ctaTxtColor": {
+        "type": "string",
+        "title": "Cor do texto do botão"
+      },
+      "images": {
+        "type": "array",
+        "title": "Imagens do banner",
+        "items": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "title": "URL da imagem"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Texto alternativo para a imagem"
+            },
+            "width": {
+              "type": "number",
+              "title": "Largura da imagem em pixels"
+            },
+            "height": {
+              "type": "number",
+              "title": "Tamanho da imagem em pixels"
+            }
+          }
+        }
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

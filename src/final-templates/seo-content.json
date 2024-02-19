@@ -1,0 +1,23 @@
+{
+  "json": {
+    "type": "object",
+    "properties": {
+      "content": {
+        "type": "string",
+        "title": "Conteúdo"
+      },
+      "labelShowLess": {
+        "type": "string",
+        "title": "Label para mostrar menos"
+      },
+      "labelShowMore": {
+        "type": "string",
+        "title": "Label para mostrar mais"
+      },
+      "maxHeight": {
+        "title": "Altura máxima",
+        "type": ["string", "number"]
+      }
+    }
+  }
+}

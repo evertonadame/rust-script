@@ -1,0 +1,27 @@
+{
+  "json": {
+    "type": "object",
+    "properties": {
+      "logo": {
+        "type": "string",
+        "title": "Url do logo",
+        "description": "Logo que será exibido no topo"
+      },
+      "description": {
+        "type": "string",
+        "title": "Descrição",
+        "description": "Descrição do error que será exibido"
+      },
+      "statusCode": {
+        "type": ["string", "number"],
+        "title": "Código do status"
+      },
+      "statusMessage": {
+        "type": "string",
+        "title": "Mensagem do status",
+        "description": "Mensagem do status"
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

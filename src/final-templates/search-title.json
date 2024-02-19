@@ -1,0 +1,98 @@
+{
+  "json": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "title": "Título",
+        "type": "object",
+        "properties": {
+          "prefix": {
+            "type": "string",
+            "title": "Prefixo do título",
+            "description": "Texto que aparecerá antes do título"
+          },
+          "highlight": {
+            "type": "boolean",
+            "title": "Destacar título",
+            "description": "Destacar o título com uma cor diferente"
+          },
+          "titleVariant": {
+            "title": "Tag do título principal",
+            "description": "Tag HTML que o título principal será renderizado",
+            "enum": [
+              "address",
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "p",
+              "span",
+              "strong"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "showCount": {
+        "type": "boolean",
+        "title": "Exibir quantidade de resultados"
+      },
+      "separator": {
+        "type": "string",
+        "title": "Separador",
+        "description": "Separador entre o título e a quantidade de resultados Ex: \"/\""
+      },
+      "subtitle": {
+        "type": "object",
+        "title": "Subtítulo",
+        "properties": {
+          "highlight": {
+            "type": "boolean",
+            "title": "Destacar subtítulo",
+            "description": "Destacar o subtítulo com uma cor diferente"
+          },
+          "titleVariant": {
+            "title": "Tag do título principal",
+            "description": "Tag HTML que o título principal será renderizado",
+            "enum": [
+              "address",
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "p",
+              "span",
+              "strong"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "results": {
+        "type": "object",
+        "title": "Resultados",
+        "properties": {
+          "highlight": {
+            "title": "Destacar resultados",
+            "type": "boolean"
+          },
+          "labelSingular": {
+            "title": "Label singular",
+            "type": "string",
+            "description": "Texto singular para o resultado caso haja apenas um"
+          },
+          "labelPlural": {
+            "type": "string",
+            "title": "Label plural",
+            "description": "Texto plural para o resultado caso haja mais de um"
+          }
+        }
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

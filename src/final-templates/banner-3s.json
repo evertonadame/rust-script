@@ -1,0 +1,144 @@
+{
+  "json": {
+    "type": "object",
+    "required": ["bgColor"],
+    "properties": {
+      "id": {
+        "type": ["string", "number"],
+        "title": "Identificador"
+      },
+      "bgColor": {
+        "type": "string",
+        "title": "Cor de fundo",
+        "description": "Cor de fundo do banner, ex: #000000, transparent"
+      },
+      "title": {
+        "type": "object",
+        "title": "Títulos do banner",
+        "required": ["title1", "title2"],
+        "properties": {
+          "title1": {
+            "type": "string",
+            "title": "Título principal"
+          },
+          "title1Variant": {
+            "title": "Tag do título principal",
+            "description": "Tag HTML que o título principal será renderizado",
+            "enum": [
+              "address",
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "p",
+              "span",
+              "strong"
+            ],
+            "type": "string"
+          },
+          "title2": {
+            "type": "string",
+            "title": "Título secundário",
+            "description": "Título secundário do banner com menor destaque"
+          }
+        }
+      },
+      "ctaTxt1": {
+        "type": "string",
+        "title": "Primeiro texto do botão"
+      },
+      "ctaTxt2": {
+        "type": "string",
+        "title": "Segundo texto do botão"
+      },
+      "ctaLink": {
+        "type": "string",
+        "title": "Link do botão",
+        "description": "Link para onde o botão irá redirecionar"
+      },
+      "ctaTarget": {
+        "enum": ["_blank", "_parent", "_self", "_top"],
+        "title": "Target",
+        "description": "Como a página deve ser aberta. Ex: blank para nova aba, self para mesma aba",
+        "type": "string"
+      },
+      "image": {
+        "type": "object",
+        "title": "Imagens do banner",
+        "required": ["xl"],
+        "properties": {
+          "xs": {
+            "type": "object",
+            "title": "Imagem para dispositivos pequenos",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
+              }
+            }
+          },
+          "md": {
+            "type": "object",
+            "title": "Imagem para dispositivos médios",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
+              }
+            }
+          },
+          "xl": {
+            "type": "object",
+            "title": "Imagem para dispositivos grandes",
+            "required": ["src", "alt", "width", "height"],
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
+              }
+            }
+          }
+        }
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}
