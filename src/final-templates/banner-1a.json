@@ -1,0 +1,89 @@
+{
+  "json": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "images": {
+        "type": "object",
+        "title": "Imagens do banner",
+        "properties": {
+          "xs": {
+            "title": "Imagem para telas pequenas",
+            "description": "Imagem para telas pequenas",
+            "$ref": "#/definitions/IBannerImageProps"
+          },
+          "md": {
+            "title": "Imagem para telas médias",
+            "description": "Imagem para telas médias",
+            "$ref": "#/definitions/IBannerImageProps"
+          },
+          "xl": {
+            "title": "Imagem para telas grandes",
+            "$ref": "#/definitions/IBannerImageProps",
+            "description": "Imagem para telas grandes"
+          }
+        }
+      },
+      "texts": {
+        "type": "object",
+        "title": "Textos do banner",
+        "properties": {
+          "title": {
+            "description": "Título principal do banner",
+            "title": "Título principal do banner",
+            "type": "string"
+          },
+          "titleTag": {
+            "description": "Tag HTML do título principal do banner",
+            "title": "Tag HTML do título principal do banner",
+            "default": "p",
+            "enum": [
+              "address",
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "p",
+              "span",
+              "strong"
+            ],
+            "type": "string"
+          },
+          "subtitle": {
+            "description": "Subtítulo do banner",
+            "title": "Subtítulo do banner",
+            "default": null,
+            "type": "string"
+          }
+        }
+      }
+    },
+    "definitions": {
+      "IBannerImageProps": {
+        "description": "Propriedades de uma imagem de banner",
+        "type": "object",
+        "title": "Propriedades de uma imagem de banner",
+        "properties": {
+          "src": {
+            "type": "string",
+            "title": "URL da imagem"
+          },
+          "alt": {
+            "type": "string",
+            "title": "Texto alternativo para a imagem"
+          },
+          "imgW": {
+            "type": "number",
+            "title": "Largura da imagem em pixels"
+          },
+          "imgH": {
+            "type": "number",
+            "title": "Tamanho da imagem em pixels"
+          }
+        }
+      }
+    }
+  }
+}

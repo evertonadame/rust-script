@@ -16,9 +16,14 @@ fn main() {
             error!("Error: {}", e);
         }
     });
+
 }
 
 async fn get_all_templates() -> Result<(), reqwest::Error> {
+    let mut time = utils::ExecutionTimer::new();
+
+    let codegen_start = std::time::Instant::now();
+
     let get_all_templates_path = "/component-templates?pageSize=100";
     let formatted_url = utils::format_url_path(&get_all_templates_path);
 
@@ -26,8 +31,10 @@ async fn get_all_templates() -> Result<(), reqwest::Error> {
 
     let headers = get_req_common_headers();
 
+    let api_start = std::time::Instant::now();
     let res = client.get(&formatted_url)
         .headers(headers).send().await?;
+    time.add_timing("api_request".to_string(), api_start.elapsed());
 
     if res.status().is_success() {
         let res = res.json::<structs::TemplatesResponse>().await?;
@@ -49,9 +56,18 @@ async fn get_all_templates() -> Result<(), reqwest::Error> {
                         ui: Some(template.content.ui.clone().unwrap_or_else(utils::empty_json)),
                     };
 
-                    if utils::format_maybe_string(&template_api.render_type).contains("menu-1s") {
+                    let api_start = std::time::Instant::now();
+
+                    // put all templates in the API
+                    // put_template_in_api(template_api).await?;
+
+                    // test for one template
+                    if utils::format_maybe_string(&template_api.render_type).contains("box") {
                         put_template_in_api(template_api).await?;
                     }
+                        
+                    time.add_timing("api_request".to_string(), api_start.elapsed());
+
 
             } else {
                 warn!("There is no template named {} in the final templates folder.", template_api_concat_name);
@@ -62,6 +78,10 @@ async fn get_all_templates() -> Result<(), reqwest::Error> {
         let error = res.bytes().await?;
         error!("Error on get templates: {:?}", error);
     }
+
+    time.add_timing("code_execution".to_string(), codegen_start.elapsed());
+
+    time.log_timings();
 
     Ok(())
 }
@@ -87,7 +107,7 @@ async fn put_template_in_api(template: structs::Template) -> Result<(), reqwest:
         info!("Template {} updated successfully", utils::format_maybe_string(&template_without_id.name));
     } else {
         let error = res.bytes().await?;
-        error!("Error on updating template: {:?}", error);
+        error!("Error on updating template: {:?}, name:{:?}", error, &template_without_id.name);
     }
 
     Ok(())
@@ -129,6 +149,7 @@ fn get_templates_folder() -> Vec<structs::TemplateFile> {
 
 fn check_templates_diffs(templates_from_folder: &Vec<structs::TemplateFile>, templates_from_api: &Vec<structs::Template>) {
     let channel_id = std::env::var("CHANNEL_ID").expect("CHANNEL_ID must be set");
+    
     let templates_from_folder_len = templates_from_folder.len();
         let templates_from_api_len = templates_from_api.len();
 

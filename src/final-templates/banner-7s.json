@@ -52,54 +52,51 @@
       },
       "images": {
         "type": "object",
-        "images": {
-          "type": "object",
-          "title": "Imagens do banner",
-          "required": ["xl"],
-          "properties": {
-            "md": {
-              "type": "object",
-              "title": "Imagem para dispositivos médios",
-              "properties": {
-                "src": {
-                  "type": "string",
-                  "title": "URL da imagem"
-                },
-                "alt": {
-                  "type": "string",
-                  "title": "Texto alternativo para a imagem"
-                },
-                "width": {
-                  "type": "number",
-                  "title": "Largura da imagem em pixels"
-                },
-                "height": {
-                  "type": "number",
-                  "title": "Tamanho da imagem em pixels"
-                }
+        "title": "Imagens do banner",
+        "required": ["xl"],
+        "properties": {
+          "md": {
+            "type": "object",
+            "title": "Imagem para dispositivos médios",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
               }
-            },
-            "xl": {
-              "type": "object",
-              "title": "Imagem para dispositivos grandes",
-              "required": ["src", "alt", "width", "height"],
-              "properties": {
-                "src": {
-                  "type": "string",
-                  "title": "URL da imagem"
-                },
-                "alt": {
-                  "type": "string",
-                  "title": "Texto alternativo para a imagem"
-                },
-                "width": {
-                  "type": "number",
-                  "title": "Largura da imagem em pixels"
-                },
-                "height": {
-                  "type": "number",
-                  "title": "Tamanho da imagem em pixels"
-                }
+            }
+          },
+          "xl": {
+            "type": "object",
+            "title": "Imagem para dispositivos grandes",
+            "required": ["src", "alt", "width", "height"],
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "URL da imagem"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Texto alternativo para a imagem"
+              },
+              "width": {
+                "type": "number",
+                "title": "Largura da imagem em pixels"
+              },
+              "height": {
+                "type": "number",
+                "title": "Tamanho da imagem em pixels"
               }
             }
           }

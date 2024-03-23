@@ -54,7 +54,7 @@
             "description": "Destacar o subtítulo com uma cor diferente"
           },
           "titleVariant": {
-            "title": "Tag do título principal",
+            "title": "Tag do subtítulo",
             "description": "Tag HTML que o título principal será renderizado",
             "enum": [
               "address",
